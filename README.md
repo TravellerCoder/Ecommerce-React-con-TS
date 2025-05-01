@@ -2,11 +2,10 @@ Ecommerce realizado con React y TypeScript como cierre del modulo de reactjs + t
 
 Proyecto creado con vite. 
 
-Hacer git clone https://github.com/TravellerCoder/Ecommerce-React-con-TS/edit/master/README.md en la consola.
+Hacer git clone https://github.com/TravellerCoder/Ecommerce-React-con-TS en la consola.
 
 Correr npm install para instalar todas las dependencias y correr el comando npm run dev para verlo de forma local en el navegador.
 ```
-
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
