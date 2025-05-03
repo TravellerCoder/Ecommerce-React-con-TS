@@ -2,7 +2,7 @@ const fs = require('fs');
 const https = require('https');
 
 // URL de la Fake Store API
-const url = 'https://fakestoreapi.com/products';
+const url = 'https://fakestoreapi.com/products/category/electronics';
 
 https.get(url, (res) => {
   let data = '';
