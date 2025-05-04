@@ -14,3 +14,11 @@ export interface Rating {
     rate:  number;
     count: number;
 }
+
+interface CardProduct {
+    id: number
+    title: string
+    price: number
+    image: string
+    quantity: number
+}
