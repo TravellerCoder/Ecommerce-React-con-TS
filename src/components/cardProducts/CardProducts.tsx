@@ -7,7 +7,15 @@ interface Props{
   product: Product
 }
 
-export const CardProducts: FC<Props> = ({product}) => {
+interface CardProduct {
+  id: number
+  title: string
+  price: number
+  image: string
+  quantity: number
+}
+
+export const CardProduct: FC<Props> = ({product}) => {
 
   const {dispatch} = useContext(CartContext)
 
@@ -19,7 +27,7 @@ export const CardProducts: FC<Props> = ({product}) => {
     quantity : 1,
   }
 
-  const addToCart = ((item: Product) => {
+  const addToCart = ((item: CardProduct) => {
     dispatch({type: 'ADD_TO_CART', payload: item})
   })
 
