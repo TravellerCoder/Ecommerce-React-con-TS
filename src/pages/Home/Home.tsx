@@ -2,12 +2,12 @@ import { useState, useEffect  } from "react"
 import { Hero } from "../../components/ui/Hero/Hero"
 import styles from "./Home.module.css"
 import { CardProducts } from "../../components/cardProducts/CardProducts"
-import { Products } from "../../interface"
+import { Product } from "../../interface"
 import { getProducts } from "../../service"
 
 const Home = () => {
 
-  const [products, setProducts] = useState<Products[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(true);
 
