@@ -15,7 +15,7 @@ export interface Rating {
     count: number;
 }
 
-interface CardProduct {
+export interface CartProduct {
     id: number
     title: string
     price: number
