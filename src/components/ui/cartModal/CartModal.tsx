@@ -2,6 +2,7 @@ import styles from './CartModal.module.css'
 import Close from '../../../assets/close.svg'
 import { FC } from 'react'
 import useCartContext from '../../../hooks/useCartContext'
+import { CartProduct } from '../../../interface'
 
 interface Props {
     handleShowCartModal: () => void
@@ -9,10 +10,16 @@ interface Props {
 
 export const CartModal : FC<Props> = ({handleShowCartModal}) => {
 
-    const {state: {cartItems}} = useCartContext()
+    const {state: {cartItems}, dispatch } = useCartContext()
 
-    console.log(cartItems)
-    
+    const removeItem = (item: CartProduct) => {
+        dispatch({type: 'REMOVE_FROM_CART', payload: item})
+    }
+
+    const addItem = (item : CartProduct) => {
+        dispatch ({ type: 'ADD_TO_CART', payload: item})
+    }
+
     return (
         <div className={styles.modalContainer}>
             <button className={styles.modalCloseButton} onClick={handleShowCartModal}>
@@ -34,13 +41,13 @@ export const CartModal : FC<Props> = ({handleShowCartModal}) => {
                             <p>{item.title}</p>
                         </td>
                         <td className={styles.modalModifierButtonContainer}>
-                            <button > -1 </button>
+                            <button onClick={() => removeItem(item)} > -1 </button>
                         </td>
                         <td>
                             <p>{item.quantity}</p>
                         </td>
                         <td className={styles.modalModifierButtonContainer}>
-                            <button > +1 </button>
+                            <button onClick={() => addItem(item)} > +1 </button>
                         </td>
                     </tr>
                     ))}
