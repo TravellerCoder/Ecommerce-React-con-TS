@@ -1,12 +1,18 @@
 import styles from './CartModal.module.css'
 import Close from '../../../assets/close.svg'
 import { FC } from 'react'
+import useCartContext from '../../../hooks/useCartContext'
 
 interface Props {
     handleShowCartModal: () => void
 }
 
 export const CartModal : FC<Props> = ({handleShowCartModal}) => {
+
+    const {state: {cartItems}} = useCartContext()
+
+    console.log(cartItems)
+    
     return (
         <div className={styles.modalContainer}>
             <button className={styles.modalCloseButton} onClick={handleShowCartModal}>
@@ -22,16 +28,22 @@ export const CartModal : FC<Props> = ({handleShowCartModal}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>name</td>
+                    {cartItems.map((item) => (
+                    <tr key={item.id}>
+                        <td>
+                            <p>{item.title}</p>
+                        </td>
                         <td className={styles.modalModifierButtonContainer}>
                             <button > -1 </button>
                         </td>
-                        <td>12</td>
+                        <td>
+                            <p>{item.quantity}</p>
+                        </td>
                         <td className={styles.modalModifierButtonContainer}>
                             <button > +1 </button>
                         </td>
                     </tr>
+                    ))}
                 </tbody>
             </table>
             <div>

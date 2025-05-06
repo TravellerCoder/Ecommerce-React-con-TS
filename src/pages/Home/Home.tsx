@@ -1,7 +1,7 @@
 import { useState, useEffect  } from "react"
 import { Hero } from "../../components/ui/Hero/Hero"
 import styles from "./Home.module.css"
-import { CardProducts } from "../../components/cardProducts/CardProducts"
+import { CardProduct } from "../../components/cardProducts"
 import { Product } from "../../interface"
 import { getProducts } from "../../service"
 
@@ -30,7 +30,7 @@ useEffect(() => {
       {error && <h1>Error loading products</h1>}
       <div className={styles.container}>
         {products.map((product) => (
-          <CardProducts
+          <CardProduct
             key={product.id} product={product} 
           /> 
           ))}
