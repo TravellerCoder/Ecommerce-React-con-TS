@@ -1,4 +1,4 @@
-import Logo from '../../../assets/logo.svg';
+import Logo from '../../../assets/navbarIcono2.png';
 import CartIcon from '../../../assets/cart.svg';
 import styles from './NavBar.module.css';
 import { useState } from 'react';
@@ -18,7 +18,7 @@ export const NavBar = () => {
         <div className={styles.navbarLogo}>
             <img src={Logo} alt="Logo de empresa" />
             <div>
-                <h2>Ecommerce</h2>
+                <h2>MotoTire</h2>
             </div>
         </div>
         <div className={styles.navbarCartContainer}>

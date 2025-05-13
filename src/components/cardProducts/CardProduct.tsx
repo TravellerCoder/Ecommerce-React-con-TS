@@ -3,6 +3,7 @@ import useCartContext from '../../hooks/useCartContext'
 import { CartProduct, Product } from '../../interface'
 import styles from './CardProduct.module.css'
 
+
 interface Props{
   product: Product
 }
@@ -11,7 +12,7 @@ interface Props{
 
 export const CardProduct: FC<Props> = ({product}) => {
 
-  const {dispatch} = useCartContext()
+  const {dispatch} = useCartContext() || {};
 
   const item: CartProduct = {
     id: product.id,
@@ -22,6 +23,10 @@ export const CardProduct: FC<Props> = ({product}) => {
   }
 
   const addToCart = ((item: CartProduct) => {
+    if (!dispatch) {
+      console.error('Dispatch function is not available');
+      return;
+    }
     dispatch({type: 'ADD_TO_CART', payload: item})
   })
 
