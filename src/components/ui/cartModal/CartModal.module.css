@@ -52,20 +52,3 @@
 	width: 95%;
 }
 
-.modalModifierButtonContainer{
-  margin: 0 auto;
-	width: 100%;
-}
-
-.modalModifierButtonContainer button{
-  all: unset;
-	background-color: #EDB00F;
-	border-radius: 5px;
-	border: none;
-	color: #fff;
-	cursor: pointer;
-	font-size: 1rem;
-	padding: 15px 10px;
-	text-align: center;
-	width: 50%;
-}
