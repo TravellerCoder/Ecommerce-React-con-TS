@@ -3,6 +3,7 @@ import CartIcon from '../../../assets/cart.svg';
 import styles from './NavBar.module.css';
 import { useState } from 'react';
 import { CartModal } from '../cartModal';
+import useCartContext from '../../../hooks/useCartContext';
 
 
 export const NavBar = () => {
@@ -13,6 +14,8 @@ export const NavBar = () => {
         setShowCartModal(!showCartModal);
     }
 
+    const {state:{cartItems}} = useCartContext();
+
   return (
     <div className={styles.navbarContainer}>
         <div className={styles.navbarLogo}>
@@ -22,7 +25,7 @@ export const NavBar = () => {
             </div>
         </div>
         <div className={styles.navbarCartContainer}>
-            <span className={styles.navBarTextAmount}>2</span>
+            <span className={styles.navBarTextAmount}>{ cartItems.length }</span>
             <img src={CartIcon} alt="Emoji de carrito" onClick={handleShowCartModal} />
         </div>
         {showCartModal && (<CartModal handleShowCartModal={handleShowCartModal} />)}
