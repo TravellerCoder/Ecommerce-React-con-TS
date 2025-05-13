@@ -4,24 +4,34 @@ import styles from './NavBar.module.css';
 import { useState } from 'react';
 import { CartModal } from '../cartModal';
 import useCartContext from '../../../hooks/useCartContext';
+import { useNavigate } from 'react-router-dom';
 
 
 export const NavBar = () => {
 
     const [showCartModal, setShowCartModal] = useState(false);
 
+    const {state:{cartItems}} = useCartContext();
+
+    const navigate = useNavigate();
+
     const handleShowCartModal = () => {
         setShowCartModal(!showCartModal);
     }
 
-    const {state:{cartItems}} = useCartContext();
+    const handleHomeClick = () => {
+        navigate('/');    
+    }
+
 
   return (
     <div className={styles.navbarContainer}>
         <div className={styles.navbarLogo}>
             <img src={Logo} alt="Logo de empresa" />
             <div>
-                <h2>MotoTire</h2>
+                <button onClick={handleHomeClick} className={styles.navbarButton}>
+                    <h2>MotoTire</h2>
+                </button>
             </div>
         </div>
         <div className={styles.navbarCartContainer}>

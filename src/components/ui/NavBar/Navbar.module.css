@@ -26,7 +26,17 @@ h2 {
 .navbarLogo img{
   height: 50px;
   width: 50px;
-}	
+}
+
+.navbarButton{
+	  background-color: transparent;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 1.2rem;
+	font-weight: bold;
+	transition: 0.5s ease-in-out;
+}
 
 .navbarCartContainer{
     align-items: center;
