@@ -23,7 +23,7 @@ export const CartModal : FC<Props> = ({handleShowCartModal}) => {
             </button>
             <Table/>
             <div className={styles.modalButtonContainer }>
-                <button >
+                <button onClick={ handleCheckout } >
                     Pagar
                 </button>
             </div>
