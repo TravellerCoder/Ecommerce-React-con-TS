@@ -2,7 +2,7 @@ import { FC } from 'react'
 import useCartContext from '../../hooks/useCartContext'
 import { CartProduct, Product } from '../../interface'
 import styles from './CardProduct.module.css'
-
+import { toast} from 'sonner'
 
 interface Props{
   product: Product
@@ -18,17 +18,17 @@ export const CardProduct: FC<Props> = ({product}) => {
     id: product.id,
     title: product.title,
     price: product.price,
+
     image: product.image,
     quantity : 1,
   }
 
-  const addToCart = ((item: CartProduct) => {
-    if (!dispatch) {
-      console.error('Dispatch function is not available');
-      return;
+  const addToCart = (item: CartProduct) => {
+      dispatch ({type: 'ADD_TO_CART', payload: item})
+      toast.success('Producto agregado al carrito')
     }
-    dispatch({type: 'ADD_TO_CART', payload: item})
-  })
+    
+  
 
   return (
     <div className={styles.cardContainer} >

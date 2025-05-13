@@ -4,6 +4,7 @@ import styles from "./Home.module.css"
 import { CardProduct } from "../../components/cardProducts"
 import { Product } from "../../interface"
 import { getProducts } from "../../service"
+import { Toaster } from "sonner"
 
 const Home = () => {
 
@@ -26,6 +27,7 @@ useEffect(() => {
   return (
     <>
       < Hero />
+      <Toaster />
       {loading && <h1>Loading...</h1>}
       {error && <h1>Error loading products</h1>}
       <div className={styles.container}>
