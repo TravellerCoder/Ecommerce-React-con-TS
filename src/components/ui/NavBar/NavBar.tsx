@@ -4,7 +4,7 @@ import styles from './NavBar.module.css';
 import { useState } from 'react';
 import { CartModal } from '../cartModal';
 import useCartContext from '../../../hooks/useCartContext';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 export const NavBar = () => {
@@ -23,6 +23,8 @@ export const NavBar = () => {
         navigate('/');    
     }
 
+    const location = useLocation();
+
 
   return (
     <div className={styles.navbarContainer}>
@@ -34,11 +36,15 @@ export const NavBar = () => {
                 </button>
             </div>
         </div>
-        <div className={styles.navbarCartContainer}>
-            <span className={styles.navBarTextAmount}>{ cartItems.length }</span>
-            <img src={CartIcon} alt="Emoji de carrito" onClick={handleShowCartModal} />
-        </div>
-        {showCartModal && (<CartModal handleShowCartModal={handleShowCartModal} />)}
+        {location.pathname !== '/checkout' && (
+            <>
+                <div className={styles.navbarCartContainer}>
+                    <span className={styles.navBarTextAmount}>{ cartItems.length }</span>
+                    <img src={CartIcon} alt="Emoji de carrito" onClick={handleShowCartModal} />
+                </div>
+                {showCartModal && (<CartModal handleShowCartModal={handleShowCartModal} />)}
+            </>
+        )}
     </div>
-  )
+    )
 }
