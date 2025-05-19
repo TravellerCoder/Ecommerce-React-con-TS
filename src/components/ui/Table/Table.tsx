@@ -46,6 +46,11 @@ export const Table = () => {
                     ))}
                 </tbody>
             </table>
+
+            <div>
+                <button className={styles.buyButton}>Comprar</button>
+            </div>
+
             <div>
                 <h3>{totalPrice()}</h3>
             </div>
