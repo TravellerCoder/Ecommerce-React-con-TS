@@ -1,8 +1,9 @@
 .heroContainer{
-  background-image: url("../../../assets/hero.png");
+  background-image: url("../../../assets/banner-enduro.jpeg");
 	background-position: 50%;
 	background-size: cover;
-	align-items: center;
+  background-repeat: no-repeat;
+  align-items: center;
 }
 
 .heroTitleContainer{
@@ -13,7 +14,7 @@
 @media (min-width: 768px) {
   .heroContainer{
     background-position: 50%;
-		height: 100vh;
+		height: 60vh;
   }
 }
 

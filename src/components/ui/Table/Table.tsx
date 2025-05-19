@@ -24,18 +24,13 @@ export const Table = () => {
     return (
         <>
         <table className={styles.tableContainer}>
-            <thead className={styles.tableHeader}>
-                    <tr>
-                        <th>Product</th>
-                        <th>Delete</th>
-                        <th>Quantity</th>
-                        <th>Add</th>
-                    </tr>
-            </thead>
-            <tbody>
+            <tbody className={styles.tableBody}>
                     {cartItems.map((item) => (
                     <tr key={item.id}>
-                        <td>
+                        <td className={styles.tableImageContainer}>
+                            <img src={item.image} alt={item.title} />
+                        </td>
+                        <td className={styles.tableTitleContainer}>
                             <p>{item.title}</p>
                         </td>
                         <td className={styles.modalModifierButtonContainer}>
