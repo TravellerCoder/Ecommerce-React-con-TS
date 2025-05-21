@@ -22,3 +22,12 @@ export interface CartProduct {
     image: string
     quantity: number
 }
+
+export interface ProductResponse {
+    items: Product[];
+    pages: number;
+    first: number;
+    last: number;
+    next: number | null;
+    prev: number | null;
+}
