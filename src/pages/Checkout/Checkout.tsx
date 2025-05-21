@@ -1,5 +1,4 @@
 import { Table } from "../../components/ui/Table/Table"
-import  CreditCardForm  from "../../components/ui/CreditCard/CreditCard"
 import styles from './Checkout.module.css'
 
 const Checkout = () => {
@@ -9,7 +8,6 @@ const Checkout = () => {
       <div className={styles.grid}>
         <div>
           < Table />
-          < CreditCardForm />
         </div>
       </div>
 

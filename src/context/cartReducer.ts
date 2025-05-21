@@ -7,7 +7,7 @@ export const initialState = {
     cartItems: [],
 }
 export interface CartAction {
-    type: 'ADD_TO_CART' | 'REMOVE_FROM_CART';
+    type: 'ADD_TO_CART' | 'REMOVE_FROM_CART' | 'CLEAR_CART';
     payload: CartProduct
 }
 

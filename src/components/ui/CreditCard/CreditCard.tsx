@@ -1,6 +1,7 @@
 import React from "react";
 import { usePaymentInputs } from "react-payment-inputs";
 import images from "react-payment-inputs/images";
+import styles from "./CreditCard.module.css";
 
 const CreditCardForm: React.FC = () => {
   const {
@@ -13,13 +14,13 @@ const CreditCardForm: React.FC = () => {
   } = usePaymentInputs();
 
   return (
-    <form className="p-4 max-w-sm mx-auto border rounded-xl shadow space-y-4">
-      <div {...wrapperProps} className="flex items-center gap-2 border p-2 rounded">
-        <svg {...getCardImageProps({ images })} className="h-6 w-auto" />
+    <form className={styles.creditCard}>
+      <div {...wrapperProps} className={styles.cardWrapper}>
+        <svg {...getCardImageProps({ images })} className={styles.cardImage} />
         <input
           {...getCardNumberProps()}
           placeholder="Card Number"
-          className="flex-1 outline-none"
+          className={ styles.cardNumber}
         />
       </div>
 
@@ -27,22 +28,22 @@ const CreditCardForm: React.FC = () => {
         <input
           {...getExpiryDateProps()}
           placeholder="MM/YY"
-          className="w-1/2 border p-2 rounded"
+          className={styles.expiryDate}
         />
         <input
           {...getCVCProps()}
           placeholder="CVC"
-          className="w-1/2 border p-2 rounded"
+          className={styles.cvc}
         />
       </div>
 
       {meta.error && (
-        <span className="text-red-500 text-sm block">{meta.error}</span>
+        <span className={styles.errorMsj}>{meta.error}</span>
       )}
 
       <button
         type="submit"
-        className="bg-blue-600 text-white px-4 py-2 rounded w-full"
+        className={styles.paymentButton}
       >
         Pagar
       </button>
